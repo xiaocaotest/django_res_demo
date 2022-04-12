@@ -18,9 +18,11 @@ from django.urls import path, include
 from rest_framework import routers
 
 from blog.views import PostViewSet
+from comments.views import CommentViewSet
 
 router = routers.DefaultRouter()
 router.register(r'posts', PostViewSet, basename='post')
+router.register(r'comments', CommentViewSet, basename='comment')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
